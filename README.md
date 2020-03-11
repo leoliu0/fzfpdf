@@ -11,11 +11,11 @@ copy fzfpdf.sh to your PATH
 
 add the following lines in your bashrc / zshrc
 
-'''
+```
 fp() {
 	find *.pdf -type f | parallel fzfpdf.sh {} | fzf --preview 'pdftotext $(cut -d ":" -f1 <<< {}) -' | cut -d ":" -f1 | xargs xdg-open
 }
-'''
+```
 
 If you do not have xdg-open set up, replace xdg-open with your favourite program to open PDF files.
 
