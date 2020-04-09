@@ -13,7 +13,7 @@ Dependencies:
 
 ```
 fp() {
-	find *.pdf -type f | parallel fzfpdf.sh {} | fzf --preview 'pdftotext $(cut -d ":" -f1 <<< {}) -' | cut -d ":" -f1 | xargs xdg-open
+	find -name "*.pdf" -type f | parallel fzfpdf.sh {} | fzf --preview 'pdftotext $(cut -d ":" -f1 <<< {}) -' | cut -d ":" -f1 | xargs xdg-open
 }
 ```
 
